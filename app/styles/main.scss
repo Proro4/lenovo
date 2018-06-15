@@ -1550,7 +1550,12 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
   }
 } 
 @media screen and (max-width:1220px){
-
+  .footer__inner__left{
+    background-size: 140%;
+    &:hover{
+      background-size: 135%;
+    }
+  }
   .logo-3__word .logo-2__word__word-e{
     left: 35px;
   }
@@ -1872,6 +1877,13 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
   }
 }
 @media screen and (max-width:750px){
+  
+  .footer__inner__left{
+    background-size: 150%;
+    &:hover{
+      background-size: 145%;
+    }
+  }
   .pop-up-map__close{
     top: 30px;
     right: 30px;

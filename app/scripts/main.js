@@ -789,14 +789,16 @@ $(document).ready(function(){
         $('.about__video__pup-up').addClass('active');
       }else{
         $('.about__video__pup-up').removeClass('active');
-      }
+      } 
     })
   }
+  $(window).scroll(function(){
+    if($(this).scrollTop() >= 900){
+        $('.about__video__pup-up').removeClass('active');
+    } 
+  })
 
  $('.pop-up-map__close').on('click',function () {
      $(this).parent().removeClass('active');
- })
-     $('.labelBlock').hover(function () {
-         console.log('111');
-     })
+ }) 
 })
