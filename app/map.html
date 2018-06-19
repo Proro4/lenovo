@@ -44,19 +44,14 @@
 <!--[if IE]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
-<div class="loaderArea">
-    <div class="loader">
-        <div class="loader__number"></div>
-    </div>
-</div>
-<div class="logo-left">
+<div class="logo-left no-load">
     <a class="logo-left__img" href="index.html"><img src="images/lenovo_logo.png" alt=""></a>
 </div>
 
 <header class="header white">
     <div class="container container-1700">
         <div class="row">
-            <div class="header__menu">
+            <div class="header__menu no-load">
                 <ul class="header__menu__left">
                     <li class="active"><a href="map.html   ">Екскурсії</a></li>
                     <li><a href="about.html">Про lenovo explorer</a></li>
@@ -65,7 +60,7 @@
                 <ul class="header__menu__right">
                     <li><a href="dowl.html">Завантажити</a></li>
                     <li><a href="code.html">Активувати код</a></li>
-                    <li class="header__menu__lang"><p>UA</p><a href="#">RU</a></li>
+                    <!--<li class="header__menu__lang"><p>UA</p><a href="#">RU</a></li>-->
                 </ul>
             </div>
         </div>
@@ -126,7 +121,8 @@
         </div>
     </div>
 </div>
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6AvtDOz1HkY1uEX6q4BtyFPeRKC5XN1o&callback=init">
+</script>
 
 <script type="text/javascript">
     // When the window has finished loading create our google map below
@@ -137,11 +133,11 @@
         // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
         var mapOptions = {
             // How zoomed in you want the map to start at (always required)
-            zoom: 14,
-
+            zoom: 13,
             // The latitude and longitude to center the map (always required)
             center: new google.maps.LatLng(50.452987, 30.546322), // New York
             disableDefaultUI: true,
+            scrollwheel: false,
 
             // How you would like to style the map.
             // This is where you would paste any style found on Snazzy Maps.
@@ -155,14 +151,14 @@
         // Create the Google Map using our element and options defined above
         var map = new google.maps.Map(mapElement, mapOptions);
 
-        // Let's also add a marker while we're at it
-
-        var marker = new MarkerWithLabel({
+        // Let's also add a marker while we're at it 
+        var labelText = ['Київський велотрек','ТЕХНОПАРК UNIT.CITY.','ТЕАТР НА ПОДОЛІ','БУДИНОК ЗВУКОЗАПИСУ УКРАїНСЬКОГО РАДІО','бібліотека ім. вернадського','арт-завод платформа'];
+        var marker1 = new MarkerWithLabel({
             map: map,
             animation: google.maps.Animation.DROP,
-            position: {lat:50.452987, lng:30.506322},
-            icon: 'images/marker_1.png',
-            labelContent: 'ТЕХНОПАРК UNIT.CITY.',
+            position: {lat:50.448821, lng:30.505781},
+            icon: 'images/marker_2.png',
+            labelContent: 'Київський велотрек',
             labelAnchor: new google.maps.Point(18, 12),
             labelClass: "labelBlock", // the CSS class for the label
             labelInBackground: true
@@ -170,17 +166,61 @@
         var marker2 = new MarkerWithLabel({
             map: map,
             animation: google.maps.Animation.DROP,
-            position: {lat:50.442987, lng:30.516322},
-            icon: 'images/marker_2.png',
-            labelContent: 'Київський велотрек',
+            position: {lat:50.468655, lng:30.463132},
+            icon: 'images/marker_1.png',
+            labelContent: 'ТЕХНОПАРК UNIT.CITY.',
             labelAnchor: new google.maps.Point(18, 12),
             labelClass: "labelBlock", // the CSS class for the label
             labelInBackground: true
         });
-        google.maps.event.addListener(marker, 'mouseover', function(e) {
+        var marker3 = new MarkerWithLabel({
+            map: map,
+            animation: google.maps.Animation.DROP,
+            position: {lat:50.460447,  lng:30.514358},
+            icon: 'images/marker_3.png',
+            labelContent: 'ТЕАТР НА ПОДОЛІ',
+            labelAnchor: new google.maps.Point(18, 12),
+            labelClass: "labelBlock", // the CSS class for the label
+            labelInBackground: true
+        });
+        var marker4 = new MarkerWithLabel({
+            map: map,
+            animation: google.maps.Animation.DROP,
+            position: {lat:50.434836,  lng: 30.535295},
+            icon: 'images/marker_4.png',
+            labelContent: 'БУДИНОК ЗВУКОЗАПИСУ УКРАїНСЬКОГО РАДІО',
+            labelAnchor: new google.maps.Point(18, 12),
+            labelClass: "labelBlock", // the CSS class for the label
+            labelInBackground: true
+        });
+        var marker5 = new MarkerWithLabel({
+            map: map,
+            animation: google.maps.Animation.DROP,
+            position: {lat:50.404279,  lng: 30.518827},
+            icon: 'images/marker_5.png',
+            labelContent: 'бібліотека ім. вернадського',
+            labelAnchor: new google.maps.Point(18, 12),
+            labelClass: "labelBlock", // the CSS class for the label
+            labelInBackground: true
+        });
+        var marker6 = new MarkerWithLabel({
+            map: map,
+            animation: google.maps.Animation.DROP,
+            position: {lat:50.461306,   lng: 30.642811},
+            icon: 'images/marker_6.png',
+            labelContent: 'арт-завод платформа',
+            labelAnchor: new google.maps.Point(18, 12),
+            labelClass: "labelBlock", // the CSS class for the label
+            labelInBackground: true
+        });
+        var numbMarker = 6;
+        for(var i = 0; i <= numbMarker; i++){
+            // console.log('marker'+i);
+        }
+        google.maps.event.addListener(marker1, 'mouseover', function(e) {
             this.setOptions({labelClass:'labelBlock_active'});
         });
-        google.maps.event.addListener(marker, 'mouseout', function(e) {
+        google.maps.event.addListener(marker1, 'mouseout', function(e) {
             this.setOptions({labelClass:'labelBlock_false'});
         });
         google.maps.event.addListener(marker2, 'mouseover', function(e) {
@@ -189,7 +229,7 @@
         google.maps.event.addListener(marker2, 'mouseout', function(e) {
             this.setOptions({labelClass:'labelBlock_false'});
         });
-        marker.addListener('click',function(){
+        marker1.addListener('click',function(){
             $('.pop-up-map').addClass('active');
         })
         marker2.addListener('click',function(){
@@ -203,7 +243,6 @@
     }
 
 </script>
-
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 <script>
     (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=

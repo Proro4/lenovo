@@ -21,6 +21,8 @@
     <!-- endbuild -->
 
     <!-- build:css styles/main.css -->
+    <!--<link href="styles/videojs-panorama.min.css" rel="stylesheet">-->
+      <link rel="stylesheet" href="styles/video-js.css">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
     
@@ -31,7 +33,9 @@
   <body>
   <div class="min-display">
       <div class="min-display__info">
-          <p>Переверніть екран</p>
+          <p>Всередині багато крутого контенту. <br>
+              Тримай смартфон горизонтально для найкращого відтворення
+          </p>
           <div class="min-display__info__img">
 
           </div>
@@ -61,7 +65,7 @@
            <ul class="header__menu__right">
              <li><a href="dowl.html">Завантажити</a></li>
               <li><a href="code.html">Активувати код</a></li>
-               <li class="header__menu__lang"><p>UA</p><a href="#">RU</a></li>
+               <!--<li class="header__menu__lang"><p>UA</p><a href="#">RU</a></li>-->
            </ul>
           </div>
        </div>
@@ -111,8 +115,12 @@
           <div class="logo-video__block__play"> </div>
           <div class="logo-video__block">
               <video class="logo-video" id='about-video' autoplay muted loop>
-                <source src="video/kiev.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+                <source src="video/ny-360.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
               </video>
+              <!--<iframe  class="logo-video"  height="500" src="https://www.youtube.com/embed/YM6GTu_RcWM?rel=0&amp;controls=0&amp;showinfo=0;autoplay=1;mute=1;" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen ></iframe>-->
+              <!--<video id="videojs-panorama-player" class="video-js vjs-default-skin"  crossorigin="anonymous" controls  autoplay muted loop>-->
+                  <!--<source src="video/ny-360.mp4" type='video/mp4'>-->
+              <!--</video>-->
           </div>
           <!-- <img class='logo-v__video__logo open-logo'src="images/svg/kiev-logo-white.svg" alt=""> -->
           <div class="logo-v__video__logo-text">
@@ -187,7 +195,9 @@
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
     <!-- endbuild -->
     <!-- build:js scripts/main.js -->
-    <script src="scripts/markerwithlabel.js"></script>
+    <!--<script src="scripts/videojs-panorama.v5.min.js"></script>-->
+  <script src="scripts/markerwithlabel.js"></script>
+  <script src="scripts/video.js"></script>
     <script src="scripts/main.js"></script> 
     <!-- endbuild -->
   </body>
