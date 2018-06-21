@@ -276,6 +276,9 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
   margin-bottom: 100px;
   position: relative;
   z-index: 1;
+  &.mb50{
+    margin-bottom: 50px;
+  }
   &.white{
     li{
       a,p{
@@ -516,10 +519,11 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
   fill: white;
 }
 .logo-v{
-  margin-bottom: 63px;
+  margin-bottom: 30px;
   height: 585px;
   overflow: hidden;
   .logo-video{
+    position: relative;
     &__block{
     position: relative;
       &:before{
@@ -529,7 +533,9 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
         top: 0;
         height: 100%;
         width: 100%;
+        z-index: 1;
         background: rgba(0,0,0,0.4);
+        pointer-events: none;
       }
       &__play{
         position: absolute;
@@ -537,7 +543,7 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
         top: 5%;
         height: 90%;
         width: 100%;
-        z-index: 2;
+        z-index: 3;
         pointer-events: none;
       }
     }
@@ -560,6 +566,7 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
       left: 0;
       top: 0;
       pointer-events: none;
+      z-index: 2;
       &__word-k{
         position: absolute;
         left: 290px;
@@ -775,12 +782,16 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
 }
 .footer{
   overflow: visible;
-  height: 185px;
+  height: 175px;
   position: relative;
   animation: hiddenoff 3.5s 1;
+  &.no-up{
+    animation: inherit;
+    overflow: hidden;
+  }
   &__inner{
     animation:logoup 2s 1 1.2s;
-    height: 185px;
+    height: 175px;
     background: $blue;
     display: flex;
     justify-content:space-between;  
@@ -934,7 +945,7 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
 .code,
 .dowload{
   text-align: center;
-  padding-bottom: 200px;
+  padding-bottom: 120px;
   position: relative;
   z-index: 200;
   &__text{
@@ -1047,6 +1058,9 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
       }
     }
   }
+}
+.code{
+  padding-bottom: 203px;
 }
 .dowload{
   &__list{
@@ -1247,14 +1261,14 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
     &__inner{
       display: flex;
       align-items:center;
-      justify-content:flex-end;
+      justify-content:space-between;
     }
     &__text{
       display: flex;
       flex-direction:column;
       justify-content:flex-end;
       height: 650px;
-      padding-right:100px;
+      padding-left:260px;
     }
     &__img{
       max-width: 100%;
@@ -1477,6 +1491,9 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
   width:100%;
 }
 @media screen and (max-width:1760px){
+  .about-project h1{
+    padding-left: 40px;
+  }
   .logo-v{
     margin-top: 140px;
   }
@@ -1484,7 +1501,7 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
     padding: 0 0 0 40px;
   }
   .about-project h3{
-    padding: 10px 0 0 40px;
+    padding: 10px 0 0 38px;
   }
   .about__text{
     text-align: center;
@@ -1574,7 +1591,15 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
     padding-left: 100px;
   }
   .about-project__block-1__text{
-    padding-left: 50px;
+    padding-left: 140px;
+  }
+  .about-project__block-2__img img,
+  .about-project__block-4__inner{
+    margin-left: 40px;
+  }
+  .about-project__block-4__info h3,
+  .about-project__block-4__info p{
+    padding-left: 0;
   }
 }
 @media screen and (min-width:1760px){
@@ -2253,7 +2278,7 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
 }
 
 .labelBlock {
-  max-width: 225px;
+  max-width: 250px;
   padding-left:70px;
   padding-bottom: 20px;
   vertical-align: top;
@@ -2263,11 +2288,11 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
   color:rgba(255,255,255,0.5);
   font-size: 18px;
   font-family: 'GothamPro-Bold';
-  background: url("../images/map-circle.png")no-repeat left 10px bottom;
+  background: url("../images/map-circle.png")no-repeat left 10px top 55px;
   line-height: 1.3;
 }
 .labelBlock_active {
-  max-width: 200px;
+  max-width: 250px;
   padding-left:70px;
   padding-bottom: 60px;
   vertical-align: top;
@@ -2293,17 +2318,17 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
   }
 }
 .labelBlock_false {
-  max-width: 200px;
+  max-width: 250px;
   padding-left:70px;
   padding-bottom: 20px;
   vertical-align: top;
   margin-top: -40px !important;
   text-transform: uppercase;
   text-align: left;
-  color:rgba(255,255,255,1);
+  color:rgba(255,255,255,0.5);
   font-size: 18px;
   font-family: 'GothamPro-Bold';
-  background: url("../images/map-circle.png")no-repeat left 10px bottom;
+  background: url("../images/map-circle.png")no-repeat left 10px top 55px;
   line-height: 1.3;
   transform: translate3d(0,0px,0);
   animation: labelDown 0.5s 1;

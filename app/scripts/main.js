@@ -514,9 +514,11 @@ function mouseStyle(){
 }
 if($(window).width() >= 768){
     mouseStyle();
+
 }
 function logoParalax(e){
     if($('.logo-v').length != 0){
+
         var logoK = $('.logo-v__video__logo-text__word-k');
         var logoI = $('.logo-v__video__logo-text__word-i');
         var logoE = $('.logo-v__video__logo-text__word-e');
@@ -555,7 +557,7 @@ function logoParalax(e){
         $('.logo-v__video__bottom__logo-text__word-i').css({'height':logoHeightI,'width':logoWidthI,'left':logoLeftI-logoBlockLeft,'top':logoTopI-logoBlockBottom,'background-size':logoWidthI });
         $('.logo-v__video__bottom__logo-text__word-e').css({'height':logoHeightE,'width':logoWidthE,'left':logoLeftE-logoBlockLeft,'top':logoTopE-logoBlockBottom ,'background-size':logoWidthE });
         $('.logo-v__video__bottom__logo-text__word-v').css({'height':logoHeightV,'width':logoWidthV,'left':logoLeftV-logoBlockLeft,'top':logoTopV-logoBlockBottom,'background-size':logoWidthV });
-        $('.logo-back').css({'top':'0px','height':logoHeight});
+        $('.logo-back').css({'top':'0px','height':logoHeight,'min-height':'720px'});
         $('.logo-back__word-k').css({'height':logoHeightK,'width':logoWidthK,'left':logoLeftK,'top':logoTopK,'background-size':logoWidthK});
         $('.logo-back__word-i').css({'height':logoHeightI,'width':logoWidthI,'left':logoLeftK,'top':logoTopI,'background-size':logoWidthI});
         $('.logo-back__word-e').css({'height':logoHeightE,'width':logoWidthE,'left':logoLeftE,'top':logoTopE,'background-size':logoWidthE });
@@ -605,7 +607,9 @@ function logoParalax(e){
 
 }
 // footer left hover
-logoParalax();
+setTimeout(function () {
+    logoParalax();
+},500);
 $(window).resize(function(){
 
     logoParalax();
@@ -823,4 +827,19 @@ function Latin(obj) {
         obj.defaultValue = obj.value;
     else
         obj.value = obj.defaultValue;
+}
+
+if($('#videojs-panorama-player').length != 0){
+    var player = window.player = videojs('videojs-panorama-player', {}, function () {
+        window.addEventListener('resize', function () {
+            var canvas = player.getChild('Canvas');
+            canvas.handleResize();
+        });
+        player.panorama({
+            clickAndDrag: true,
+            callback: function () {
+                player.play();
+            }
+        });
+    });
 }

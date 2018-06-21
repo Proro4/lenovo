@@ -121,14 +121,13 @@
         </div>
     </div>
 </div>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6AvtDOz1HkY1uEX6q4BtyFPeRKC5XN1o&callback=init">
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6AvtDOz1HkY1uEX6q4BtyFPeRKC5XN1o&callback=initMap">
 </script>
 
 <script type="text/javascript">
     // When the window has finished loading create our google map below
-    google.maps.event.addDomListener(window, 'load', init);
 
-    function init() {
+    function initMap() {
         // Basic options for a simple Google Map
         // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
         var mapOptions = {
@@ -151,90 +150,34 @@
         // Create the Google Map using our element and options defined above
         var map = new google.maps.Map(mapElement, mapOptions);
 
-        // Let's also add a marker while we're at it 
-        var labelText = ['Київський велотрек','ТЕХНОПАРК UNIT.CITY.','ТЕАТР НА ПОДОЛІ','БУДИНОК ЗВУКОЗАПИСУ УКРАїНСЬКОГО РАДІО','бібліотека ім. вернадського','арт-завод платформа'];
-        var marker1 = new MarkerWithLabel({
-            map: map,
-            animation: google.maps.Animation.DROP,
-            position: {lat:50.448821, lng:30.505781},
-            icon: 'images/marker_2.png',
-            labelContent: 'Київський велотрек',
-            labelAnchor: new google.maps.Point(18, 12),
-            labelClass: "labelBlock", // the CSS class for the label
-            labelInBackground: true
-        });
-        var marker2 = new MarkerWithLabel({
-            map: map,
-            animation: google.maps.Animation.DROP,
-            position: {lat:50.468655, lng:30.463132},
-            icon: 'images/marker_1.png',
-            labelContent: 'ТЕХНОПАРК UNIT.CITY.',
-            labelAnchor: new google.maps.Point(18, 12),
-            labelClass: "labelBlock", // the CSS class for the label
-            labelInBackground: true
-        });
-        var marker3 = new MarkerWithLabel({
-            map: map,
-            animation: google.maps.Animation.DROP,
-            position: {lat:50.460447,  lng:30.514358},
-            icon: 'images/marker_3.png',
-            labelContent: 'ТЕАТР НА ПОДОЛІ',
-            labelAnchor: new google.maps.Point(18, 12),
-            labelClass: "labelBlock", // the CSS class for the label
-            labelInBackground: true
-        });
-        var marker4 = new MarkerWithLabel({
-            map: map,
-            animation: google.maps.Animation.DROP,
-            position: {lat:50.434836,  lng: 30.535295},
-            icon: 'images/marker_4.png',
-            labelContent: 'БУДИНОК ЗВУКОЗАПИСУ УКРАїНСЬКОГО РАДІО',
-            labelAnchor: new google.maps.Point(18, 12),
-            labelClass: "labelBlock", // the CSS class for the label
-            labelInBackground: true
-        });
-        var marker5 = new MarkerWithLabel({
-            map: map,
-            animation: google.maps.Animation.DROP,
-            position: {lat:50.404279,  lng: 30.518827},
-            icon: 'images/marker_5.png',
-            labelContent: 'бібліотека ім. вернадського',
-            labelAnchor: new google.maps.Point(18, 12),
-            labelClass: "labelBlock", // the CSS class for the label
-            labelInBackground: true
-        });
-        var marker6 = new MarkerWithLabel({
-            map: map,
-            animation: google.maps.Animation.DROP,
-            position: {lat:50.461306,   lng: 30.642811},
-            icon: 'images/marker_6.png',
-            labelContent: 'арт-завод платформа',
-            labelAnchor: new google.maps.Point(18, 12),
-            labelClass: "labelBlock", // the CSS class for the label
-            labelInBackground: true
-        });
-        var numbMarker = 6;
-        for(var i = 0; i <= numbMarker; i++){
-            // console.log('marker'+i);
+        // Let's also add a marker while we're at it
+        var colMarker = 5;
+        var i;
+        var labelText = ['Київський велотрек','ТЕХНОПАРК UNIT.CITY.','ТЕАТР НА ПОДОЛІ','БУДИНОК ЗВУКОЗАПИСУ  РАДІО','бібліотека ім. вернадського','арт-завод платформа'];
+        var mapMarker = ['images/marker_1.png','images/marker_2.png','images/marker_3.png','images/marker_4.png','images/marker_5.png','images/marker_6.png'];
+        var mapPosY = ['50.448821','50.468655','50.460447','50.434836','50.404279','50.461306'];
+        var mapPosX = ['30.505781','30.463132','30.514358','30.535295','30.518827','30.642811'];
+        for( i = 0; i <= colMarker; i++){
+
+            var marker = new MarkerWithLabel({
+                map: map,
+                animation: google.maps.Animation.DROP,
+                position: new google.maps.LatLng(mapPosY[i],mapPosX[i]),
+                icon: mapMarker[i],
+                labelContent:labelText[i],
+                labelClass: "labelBlock", // the CSS class for the label
+                labelInBackground: true
+            });
+            google.maps.event.addListener(marker, 'mouseover', function(e) {
+                this.setOptions({labelClass:'labelBlock_active'});
+            });
+            google.maps.event.addListener(marker, 'mouseout', function(e) {
+                this.setOptions({labelClass:'labelBlock_false'});
+            });
+            marker.addListener('click',function(){
+                $('.pop-up-map').addClass('active');
+            });
         }
-        google.maps.event.addListener(marker1, 'mouseover', function(e) {
-            this.setOptions({labelClass:'labelBlock_active'});
-        });
-        google.maps.event.addListener(marker1, 'mouseout', function(e) {
-            this.setOptions({labelClass:'labelBlock_false'});
-        });
-        google.maps.event.addListener(marker2, 'mouseover', function(e) {
-            this.setOptions({labelClass:'labelBlock_active'});
-        });
-        google.maps.event.addListener(marker2, 'mouseout', function(e) {
-            this.setOptions({labelClass:'labelBlock_false'});
-        });
-        marker1.addListener('click',function(){
-            $('.pop-up-map').addClass('active');
-        })
-        marker2.addListener('click',function(){
-            $('.pop-up-map').addClass('active');
-        })
         var myoverlay = new google.maps.OverlayView();
         myoverlay.draw = function () {
             this.getPanes().markerLayer.id='markerLayer';
@@ -242,6 +185,7 @@
         myoverlay.setMap(map);
     }
 
+    google.maps.event.addDomListener(window, 'load', initMap);
 </script>
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 <script>

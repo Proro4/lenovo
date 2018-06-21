@@ -22,7 +22,6 @@
 
     <!-- build:css styles/main.css -->
     <!--<link href="styles/videojs-panorama.min.css" rel="stylesheet">-->
-      <link rel="stylesheet" href="styles/video-js.css">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
     
@@ -114,15 +113,17 @@
           </div>
           <div class="logo-video__block__play"> </div>
           <div class="logo-video__block">
-              <video class="logo-video" id='about-video' autoplay muted loop>
-                <source src="video/ny-360.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
-              </video>
-              <!--<iframe  class="logo-video"  height="500" src="https://www.youtube.com/embed/YM6GTu_RcWM?rel=0&amp;controls=0&amp;showinfo=0;autoplay=1;mute=1;" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen ></iframe>-->
+              <!--<video class="logo-video" id='about-video' autoplay muted loop>-->
+                <!--<source src="video/ny-360.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>-->
+              <!--</video>-->
+              <iframe  class="logo-video"  height="500" src="https://www.youtube.com/embed/YM6GTu_RcWM?modestbranding=1;rel=0&amp;controls=0&amp;showinfo=0;autoplay=1;mute=1;" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen ></iframe>
               <!--<video id="videojs-panorama-player" class="video-js vjs-default-skin"  crossorigin="anonymous" controls  autoplay muted loop>-->
                   <!--<source src="video/ny-360.mp4" type='video/mp4'>-->
               <!--</video>-->
+              <!--<video id="videojs-panorama-player" class="logo-video video-js vjs-default-skin" poster="video/poster.jpg"  crossorigin="anonymous" controls muted loop>-->
+                  <!--<source src="video/ny-360.mp4" type='video/mp4'>-->
+              <!--</video>-->
           </div>
-          <!-- <img class='logo-v__video__logo open-logo'src="images/svg/kiev-logo-white.svg" alt=""> -->
           <div class="logo-v__video__logo-text">
             <div class="logo-v__video__logo-text__word-k"></div>
             <div class="logo-v__video__logo-text__word-i"></div>
@@ -195,10 +196,9 @@
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
     <!-- endbuild -->
     <!-- build:js scripts/main.js -->
-    <!--<script src="scripts/videojs-panorama.v5.min.js"></script>-->
+        <!--<script src="scripts/videojs-panorama.v5.min.js"></script>-->
   <script src="scripts/markerwithlabel.js"></script>
-  <script src="scripts/video.js"></script>
-    <script src="scripts/main.js"></script> 
+  <script src="scripts/main.js"></script>
     <!-- endbuild -->
   </body>
 </html>
