@@ -199,7 +199,6 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
 //POPUP
 .pop-up-map{
   box-sizing: border-box;
-  padding-left: 300px;
   padding-top: 200px;
   transform: translate3d(0,-5000px,0);
   transition:0.6s all;
@@ -212,7 +211,7 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
     position: absolute;
     right: 60px;
     top: 50px;
-    background: url("../images/close.png");
+    background: url("../images/close.svg");
     height: 61px;
     width: 37px;
   }
@@ -221,6 +220,7 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
     padding-bottom: 150px;
   }
   &__content{
+    padding-left: 300px;
     padding-bottom: 150px;
     display: flex;
     justify-content: space-between;
@@ -1608,7 +1608,26 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
     max-width:1700px;
     width: 1700px;
   }
-} 
+}
+@media screen and (max-height:1000px){
+  .logo-v{
+    margin-top: 115px;
+    margin-bottom: 0;
+    height: 570px;
+  }
+  .logo-v__text{
+    margin-top: 0;
+  }
+  .logo-v__video{
+    max-height: 500px;
+  }
+  .header{
+    height: 90px;
+  }
+  .code__text p{
+    margin-bottom: 20px;
+  }
+}
 @media screen and (max-width:1220px){
   .footer__inner__left{
     background-size: 140%;
@@ -2233,7 +2252,7 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
     z-index: 1;
     bottom: 40px;
     right: 40px;
-    max-width: 50%;
+    max-width: 32%;
     pointer-events: none;
     img{
       width: 100%;
@@ -2288,7 +2307,7 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
   color:rgba(255,255,255,0.5);
   font-size: 18px;
   font-family: 'GothamPro-Bold';
-  background: url("../images/map-circle.png")no-repeat left 40px bottom;
+  background: url("../images/map-circle.png")no-repeat left 40px bottom 3px;
   line-height: 1.3;
   margin-left: -40px !important;
   &:before{
@@ -2300,6 +2319,7 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
   }
   &.one{
     padding-left:110px;
+    animation: labelTopOnef 0.5s 1 !important;
     &:before{
       background: url("../images/marker_1.png")no-repeat center;
       height: 51px;
@@ -2309,6 +2329,7 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
   &.two{
     padding-left:110px;
     padding-bottom: 50px;
+    animation: labelTopTwof 0.5s 1 !important;
     &:before{
       background: url("../images/marker_2.png")no-repeat center;
       height: 117px;
@@ -2319,6 +2340,7 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
   &.three{
     padding-left:110px;
     padding-bottom:40px;
+    animation: labelTopTwof 0.5s 1 !important;
     &:before{
       background: url("../images/marker_3.png")no-repeat center;
       height: 93px;
@@ -2329,6 +2351,7 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
   &.four{
     padding-left:110px;
     padding-bottom: 65px;
+    animation: labelTopThreef 0.5s 1 !important;
     &:before{
       background: url("../images/marker_4.png")no-repeat center;
       height: 107px;
@@ -2338,6 +2361,7 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
   &.five{
     padding-left:110px;
     padding-bottom: 75px;
+    animation: labelTopFourf 0.5s 1 !important;
     &:before{
       background: url("../images/marker_5.png")no-repeat center;
       height: 103px;
@@ -2347,6 +2371,7 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
   &.six{
     padding-left:110px;
     padding-bottom: 75px;
+    animation: labelTopFourf 0.5s 1 !important;
     &:before{
       background: url("../images/marker_6.png")no-repeat center;
       height: 103px;
@@ -2354,6 +2379,48 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
     }
   }
 }
+
+@keyframes labelTopOnef {
+  0%{
+    transform: translate3d(0,-20px,0);
+    padding-bottom: 40px;
+  }
+  100%{
+    transform: translate3d(0,0px,0);
+    padding-bottom: 20px;
+  }
+}
+@keyframes labelTopTwof {
+  0%{
+    transform: translate3d(0,-20px,0);
+    padding-bottom: 65px;
+  }
+  100%{
+    transform: translate3d(0,0px,0);
+    padding-bottom: 50px;
+  }
+}
+@keyframes labelTopThreef {
+  0%{
+    transform: translate3d(0,-20px,0);
+    padding-bottom:85px;
+  }
+  100%{
+    transform: translate3d(0,0px,0);
+    padding-bottom: 65px;
+  }
+}
+@keyframes labelTopFourf {
+  0%{
+    transform: translate3d(0,-20px,0);
+    padding-bottom:95px;
+  }
+  100%{
+    transform: translate3d(0,0px,0);
+    padding-bottom: 75px;
+  }
+}
+
 .labelBlock.one.labhover{
   padding-bottom: 40px !important;
   transform: translate3d(0, -20px, 0) !important;

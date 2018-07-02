@@ -51,12 +51,12 @@ function mouseStyle(){
             // document.addEventListener('keydown',function(){
             //   pointer.innerHTML = innerOpts[ i++ % innerOpts.length ];
             // });
-            $('a').hover(function(){
+            $('a,.labelBlock').hover(function(){
                 // pointer.innerHTML = innerOpts[13];
                 pointer.innerHTML = '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="69px" height="24px" viewBox="0 0 69 24" enable-background="new 0 0 69 24" xml:space="preserve">  <image id="image0" width="69" height="24" x="0" y="0"xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEUAAAAYCAMAAACbQ8AyAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAtFBMVEX///8A/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wD///9IMpdZAAAAOnRSTlMAALMk94QJ4VO6KfmLDOZaAcEv+5MQ62ICyDX9mhTuaDLsZZvOOe9tBP6jGNQ/83UFqxzaRvZ9BrIhwtiKnAAAAAFiS0dEAIgFHUgAAAAHdElNRQfiBgYBHxoMiSeGAAAAnklEQVQ4y63URw7CUAwE0G9CCT2ElhBCCSX0Xuf+B0NCLJCy+hrPAZ5k2R5jLCM5RzKxRYwgXygqKEDJ1VCAckVDQbVWV1CARtNTUICWr6Gg3en+FLEN/tPrB18FZMKBhoJoGCsowGisoYQTXpkmAT1RNIv5Tc8X/L0s0xV9u+vNlv+A3Z7/6cPxxDfD+cK31PXGN+b98RRaeb2z2/8ArMx6gusSSywAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTgtMDYtMDZUMDE6MzE6MjYtMDc6MDDMuiZhAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE4LTA2LTA2VDAxOjMxOjI2LTA3OjAwveee3QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAASUVORK5CYII=" /></svg>'
             });
 
-            $('a').mouseleave(function(){
+            $('a,.labelBlock').mouseleave(function(){
                 pointer.innerHTML = innerOpts[6];
             });
             $('.pop-up-map__close').hover(function(){
