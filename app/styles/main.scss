@@ -183,17 +183,53 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
   width:63px;
   background: black;
   animation:leftkey 1.7s 1 1.1s;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
   &.no-load{
     animation:leftkey 1.7s 1 0s;
   }
   &__img{
-    position: relative;
+    top: 5px;
+    position: absolute;
     z-index: 1;
     display: inline-block;
     margin: 32px 14px;
+    left: 0;
     img{
       width: 32px;
     }
+  }
+  &__ngn{
+    margin-bottom: 30px;
+    &:hover{
+      .logo-left__ngn__img{
+        display: none;
+      }
+      .logo-left__ngn__hover{
+        display: flex;
+      }
+    }
+    &__hover{
+      display: none;
+      flex-direction: column;
+      animation: ngn 0.5s 1;
+      transform: translate3d(0,0,0);
+    }
+    span{
+      justify-content: center;
+      align-items: center;
+      padding-top: 5px;
+    }
+  }
+}
+@keyframes ngn {
+  0%{
+    transform: translate3d(0,100%,0);
+  }
+  100%{
+    transform: translate3d(0,0,0);
   }
 }
 //POPUP
