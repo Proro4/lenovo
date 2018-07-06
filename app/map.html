@@ -50,8 +50,8 @@
             <span class="logo-left__ngn__hover">
                 <span><img src="images/ngn-logo_2.png" alt=""></span>
                 <span><img src="images/ngn-logo_1.png" alt=""></span>
-                <span><img src="images/ngn-logo.png" alt=""></span>
             </span>
+        <span class="logo-left__ngn__img-h"><img src="images/ngn-logo.png" alt=""></span>
         <span class="logo-left__ngn__img"><img src="images/ngn-logo-w.png" alt=""></span>
     </a>
 </div>
@@ -105,7 +105,7 @@
                     </div>
                 </div>
                 <div class="pop-up-map__content__right">
-                    <div class="pop-up-map__content__img">
+                    <div class="pop-up-map__content__img img-move img-move__two">
                         <img src="images/pop_1.png" alt="">
                     </div>
                     <p>
@@ -124,7 +124,9 @@
                     </p> 
                 </div>
             </div>
-            <img class="pop-up-map__img" src="images/pop_2.png" alt="">
+            <div class="img-move img-move__three">
+             <img class="pop-up-map__img" src="images/pop_2.png" alt="">
+            </div>
         </div>
     </div>
     <footer class="footer">
@@ -133,11 +135,11 @@
                 <div class="footer__inner">
                     <a class="footer__inner__left" href="map.html">
                         <span class="footer__inner__left__hover"></span>
-                        <p> Повернутся до вибору локацій</p>
+                        <p>Досліди локації, що ввійшли до vr-туру </p>
                     </a>
                     <a class="footer__inner__right" href="">
                         <span class="footer__inner__right__hover"></span>
-                        <p>Завантажуй додаток для Lenovo Explorer <br> та побач Київ з VR-ракурсу</p>
+                        <p>Завантажуй додаток для та відчуй атмосферу Києва у <br> віртуальній реальності (активним лінком)</p>
                     </a>
                 </div>
             </div>
@@ -334,6 +336,9 @@
                             "color": "#ffffff"
                         },
                         {
+                            "visibility": "off"
+                        },
+                        {
                             "lightness": 18
                         }
                     ]
@@ -438,7 +443,7 @@
         var colMarker = 5;
         var i;
         var b = 0;
-        var labelText = ['Київський велотрек','ТЕХНОПАРК UNIT.CITY.','ТЕАТР НА ПОДОЛІ','БУДИНОК ЗВУКОЗАПИСУ  РАДІО','бібліотека ім. вернадського','арт-завод платформа'];
+        var labelText = ['Київський велотрек','ТЕХНОПАРК UNIT.CITY','ТЕАТР НА ПОДОЛІ','БУДИНОК ЗВУКОЗАПИСУ','бібліотека ім. вернадського','арт-завод платформа'];
         var mapMarker = ['images/marker_t.png','images/marker_t.png','images/marker_t.png','images/marker_t.png','images/marker_t.png','images/marker_t.png'];
         var mapPosY = ['50.448821','50.468655','50.460447','50.434836','50.404279','50.461306'];
         var mapPosX = ['30.505781','30.463132','30.514358','30.535295','30.518827','30.642811'];

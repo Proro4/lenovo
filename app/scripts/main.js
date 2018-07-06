@@ -19,6 +19,12 @@ $(window).on('load', function () {
     },150);
 
 
+    $('.logo-video__block').mouseenter(function () {
+        $('.RETICOOL').hide();
+    });
+    $('.logo-video__block').mouseleave(function () {
+        $('.RETICOOL').show();
+    });
 });
 
 function mouseStyle(){
@@ -784,6 +790,7 @@ $(document).mouseup(function (e){ // событие клика по веб-до�
 
 // video scroll
 $(document).ready(function(){
+
     if($('.about__video').length != 0){
         var v = document.getElementsByTagName('video')[0];
         var videoHeight = $('.about__video').height();

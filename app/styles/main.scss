@@ -202,10 +202,12 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
     }
   }
   &__ngn{
-    margin-bottom: 30px;
     &:hover{
       .logo-left__ngn__img{
         display: none;
+      }
+      .logo-left__ngn__img-h{
+        display: flex;
       }
       .logo-left__ngn__hover{
         display: flex;
@@ -216,6 +218,21 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
       flex-direction: column;
       animation: ngn 0.5s 1;
       transform: translate3d(0,0,0);
+    }
+    .logo-left__ngn__img{
+      position: relative;
+      z-index: 1;
+      background: black;
+      img{
+        margin-bottom: 30px;
+      }
+    }
+    .logo-left__ngn__img-h{
+      padding-bottom: 30px;
+      display: none;
+      position: relative;
+      z-index: 1;
+      background: black;
     }
     span{
       justify-content: center;
@@ -1395,6 +1412,41 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
     }
   }
 }
+.img-move{
+  display: inline-block;
+  overflow: hidden;
+  max-width: 1100px;
+  &__one{
+    max-width: 800px !important;
+    max-height: 480px !important;;
+    img{
+      margin-left: 0 !important;
+      margin-top: 0 !important;
+    }
+  }
+  &__two{
+    max-height: 500px;
+    float:right;
+    img{
+      float: left;
+      min-height: 110%;
+    }
+  }
+  &__three{
+    max-width: 1400px;
+    float:right;
+    img{
+      float: left;
+      min-height: 110%;
+    }
+  }
+
+  img{
+    position: relative;
+    object-fit: cover;
+    width: 115%;
+  }
+}
 .about{ 
   h1{
     line-height: 1;
@@ -1458,7 +1510,7 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
       display: flex; 
       img{
         &:last-child{
-          margin-top: 500px;
+          margin-top: 340px;
           margin-left: 100px;
         }
       }
@@ -2386,7 +2438,7 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
   }
   &.four{
     padding-left:110px;
-    padding-bottom: 65px;
+    padding-bottom: 85px;
     animation: labelTopThreef 0.5s 1 !important;
     &:before{
       background: url("../images/marker_4.png")no-repeat center;
@@ -2439,11 +2491,11 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
 @keyframes labelTopThreef {
   0%{
     transform: translate3d(0,-20px,0);
-    padding-bottom:85px;
+    padding-bottom:105px;
   }
   100%{
     transform: translate3d(0,0px,0);
-    padding-bottom: 65px;
+    padding-bottom: 85px;
   }
 }
 @keyframes labelTopFourf {
@@ -2480,7 +2532,7 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
   background: url("../images/map-circle-h.png")no-repeat  left 38px bottom;
 }
 .labelBlock.four.labhover{
-  padding-bottom: 85px !important;
+  padding-bottom: 105px !important;
   transform: translate3d(0, -20px, 0) !important;
   animation: labelTopThree 0.5s 1 !important;
   color:rgba(255,255,255,1);
@@ -2523,11 +2575,11 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
 @keyframes labelTopThree {
   0%{
     transform: translate3d(0,0px,0);
-    padding-bottom: 65px;
+    padding-bottom: 85px;
   }
   100%{
     transform: translate3d(0,-20px,0);
-    padding-bottom:85px;
+    padding-bottom:105px;
   }
 }
 @keyframes labelTopFour {
