@@ -792,18 +792,43 @@ $(document).mouseup(function (e){ // событие клика по веб-до�
 $(document).ready(function(){
 
     if($('.about__video').length != 0){
-        var v = document.getElementsByTagName('video')[0];
-        var videoHeight = $('.about__video').height();
-        v.currentTime = 10.0;
-        $('.about__video').mousemove(function(e){
-            var videoLeft = e.pageX;
-            var videoTop = e.pageY;
-            v.currentTime = videoLeft/70;
-            if(videoLeft > 400 && videoTop < videoHeight +300){
-                $('.about__video__pup-up').addClass('active');
-            }else{
-                $('.about__video__pup-up').removeClass('active');
+        $(window).scroll(function () {
+            var windowSCroll = $(this).scrollTop();
+            if(windowSCroll > 100 && windowSCroll <250){
+                $('.video-2').removeClass('active');
+                $('.video-3').removeClass('active');
+                if($('.video-1').hasClass('active')){}else{
+                    $('.video-1').addClass('active');
+                    $('.video-1').get(0).play();
+                }
+            }else if(windowSCroll > 250 && windowSCroll < 400){
+                $('.video-1').removeClass('active');
+                $('.video-3').removeClass('active');
+                if($('.video-2').hasClass('active')){}else{
+                    $('.video-2').addClass('active');
+                    $('.video-2').get(0).play();
+                }
+            }else if(windowSCroll >400 && windowSCroll < 550){
+                $('.video-1').removeClass('active');
+                $('.video-2').removeClass('active');
+                if($('.video-3').hasClass('active')){}else{
+                    $('.video-3').addClass('active');
+                    $('.video-3').get(0).play();
+                }
             }
+        })
+        // var v = document.getElementsByTagName('video')[0];
+        // var videoHeight = $('.about__video').height();
+        // v.currentTime = 10.0;
+        $('.about__video').mousemove(function(e){
+            // var videoLeft = e.pageX;
+            // var videoTop = e.pageY;
+            // v.currentTime = videoLeft/70;
+            // if(videoLeft > 400 && videoTop < videoHeight +300){
+            //     $('.about__video__pup-up').addClass('active');
+            // }else{
+            //     $('.about__video__pup-up').removeClass('active');
+            // }
         })
     }
     $(window).scroll(function(){

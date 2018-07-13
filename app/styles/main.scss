@@ -1024,7 +1024,8 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
       position: relative;
       z-index: 1;
       min-height: 110px;
-      padding:0px 35px; 
+      padding:0px 35px;
+      text-align: center;
       &:focus{
         outline: 0 !important;
         border:0; 
@@ -1366,6 +1367,9 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
         width: 100%;
         height: 380%;
         overflow: hidden;
+        &.img-move{
+          max-width: 100%;
+        }
         img{
           position: relative;
           min-height: 110%;
@@ -1389,8 +1393,15 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
   }
   &__block-4{
     &__inner{
+      &.right-50{
+        img{
+          right: 50px;
+        }
+      }
       display: flex;
       img{
+        position: relative;
+        right:20px;
         margin-bottom: 50px;
       }
     }
@@ -1502,6 +1513,13 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
     text-align: right;
     position: relative;
     top:150px;
+    .img-move{
+      max-width: 1300px;
+      max-height: 650px;
+      img{
+        height: 110%;
+      }
+    }
   }
   &__img-2{
     position: relative;
@@ -1578,7 +1596,20 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
 .logo-video{
   width:100%;
 }
+.video-1,
+.video-2,
+.video-3{
+  display: none;
+  &.active{
+    display: block;
+  }
+}
 @media screen and (max-width:1760px){
+
+  .about__img-1 .img-move {
+    max-width: 1200px;
+    max-height: 600px;
+  }
   .about-project h1{
     padding-left: 40px;
   }
@@ -2345,6 +2376,17 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
     img{
       width: 100%;
     }
+  }
+  &__text{
+    position: absolute;
+    z-index: 1;
+    bottom: 40px;
+    left:120px;
+    color: white;
+    padding-left: 25px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background: url("../images/popup_bord-w.png")no-repeat left center;
   }
   &__marker{
     position: absolute;
