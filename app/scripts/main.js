@@ -53,7 +53,7 @@ function mouseStyle(){
                 ];
 
 
-            var pointer = new RETICOOL({
+            window.pointer = new RETICOOL({
                 //innerHTML: innerOpts[i],
             });
 
@@ -61,7 +61,7 @@ function mouseStyle(){
             //   pointer.innerHTML = innerOpts[ i++ % innerOpts.length ];
             // });
             $('a,.labelBlock').hover(function(){
-                pointer.innerHTML = innerOpts[13];
+                // pointer.innerHTML = innerOpts[13];
                 pointer.innerHTML = '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="69px" height="24px" viewBox="0 0 69 24" enable-background="new 0 0 69 24" xml:space="preserve">  <image id="image0" width="69" height="24" x="0" y="0"xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEUAAAAYCAMAAACbQ8AyAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAtFBMVEX///8A/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wD///9IMpdZAAAAOnRSTlMAALMk94QJ4VO6KfmLDOZaAcEv+5MQ62ICyDX9mhTuaDLsZZvOOe9tBP6jGNQ/83UFqxzaRvZ9BrIhwtiKnAAAAAFiS0dEAIgFHUgAAAAHdElNRQfiBgYBHxoMiSeGAAAAnklEQVQ4y63URw7CUAwE0G9CCT2ElhBCCSX0Xuf+B0NCLJCy+hrPAZ5k2R5jLCM5RzKxRYwgXygqKEDJ1VCAckVDQbVWV1CARtNTUICWr6Gg3en+FLEN/tPrB18FZMKBhoJoGCsowGisoYQTXpkmAT1RNIv5Tc8X/L0s0xV9u+vNlv+A3Z7/6cPxxDfD+cK31PXGN+b98RRaeb2z2/8ArMx6gusSSywAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTgtMDYtMDZUMDE6MzE6MjYtMDc6MDDMuiZhAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE4LTA2LTA2VDAxOjMxOjI2LTA3OjAwveee3QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAASUVORK5CYII=" /></svg>'
             });
 
@@ -797,26 +797,49 @@ $(document).ready(function(){
     if($('.about__video').length != 0){
         $(window).scroll(function () {
             var windowSCroll = $(this).scrollTop();
-            if(windowSCroll > 100 && windowSCroll <250){
+            if(windowSCroll > 100 && windowSCroll <300){
                 $('.video-2').removeClass('active');
                 $('.video-3').removeClass('active');
+                $('.tips-2').removeClass('active');
+                $('.tips-3').removeClass('active');
+                $('.tips-4').removeClass('active');
                 if($('.video-1').hasClass('active')){}else{
                     $('.video-1').addClass('active');
                     $('.video-1').get(0).play();
+                    $('.tips-1').addClass('active');
                 }
-            }else if(windowSCroll > 250 && windowSCroll < 400){
+            }else if(windowSCroll > 300 && windowSCroll < 500){
                 $('.video-1').removeClass('active');
                 $('.video-3').removeClass('active');
+                $('.tips-1').removeClass('active');
+                $('.tips-3').removeClass('active');
+                $('.tips-4').removeClass('active');
                 if($('.video-2').hasClass('active')){}else{
                     $('.video-2').addClass('active');
                     $('.video-2').get(0).play();
+                    $('.tips-2').addClass('active');
                 }
-            }else if(windowSCroll >400 && windowSCroll < 550){
+            }else if(windowSCroll > 500 && windowSCroll < 700){
+                console.log('1');
                 $('.video-1').removeClass('active');
                 $('.video-2').removeClass('active');
+                $('.tips-1').removeClass('active');
+                $('.tips-2').removeClass('active');
+                $('.tips-4').removeClass('active');
+                $('.video-3').removeClass('active');
                 if($('.video-3').hasClass('active')){}else{
                     $('.video-3').addClass('active');
                     $('.video-3').get(0).play();
+                    $('.tips-3').addClass('active');
+                }
+            }else if(windowSCroll >700 && windowSCroll < 900){
+                $('.tips-1').removeClass('active');
+                $('.tips-2').removeClass('active');
+                $('.tips-3').removeClass('active');
+                if($('.tips-4').hasClass('active')){}else{
+                    $('.video-1').addClass('active');
+                    $('.tips-4').addClass('active');
+
                 }
             }
         })
@@ -848,7 +871,7 @@ $(document).ready(function(){
     $('.img-move').mousemove(function (e) {
         var objTop = e.clientY/30;
         var objLeft = e.clientX/20;
-        $(this).find('img').css({'right':objLeft,'bottom':objTop});
+        $(this).find('img').css({'left':-objLeft,'top':-objTop});
     })
 
 

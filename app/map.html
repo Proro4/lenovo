@@ -77,7 +77,7 @@
     <div id="map"></div>
     <div class="map-page__logo"><img src="images/logo_white.png" alt=""></div>
     <div class="map-page__text">
-        <p>Обирай локації та дивись тізер на ПК <br> або мобільному</p>
+        <p>Досліди локації <br> що ввійшли до VR-туру</p>
     </div>
 </div>
 <div class="pop-up-map">
@@ -161,6 +161,7 @@
         var mapOptions = {
             // How zoomed in you want the map to start at (always required)
             zoom: 13,
+            disableDoubleClickZoom:true,
             // The latitude and longitude to center the map (always required)
             center: new google.maps.LatLng(50.443187, 30.555322), // New York
             disableDefaultUI: true,
@@ -464,19 +465,27 @@
             });
             google.maps.event.addListener( markerName[i],'mouseover', function() {this.numb
                 this.setOptions({labelClass:labClassHover[this.numb]});
+                window.pointer.innerHTML = '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="69px" height="24px" viewBox="0 0 69 24" enable-background="new 0 0 69 24" xml:space="preserve">  <image id="image0" width="69" height="24" x="0" y="0"xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEUAAAAYCAMAAACbQ8AyAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAtFBMVEX///8A/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wD///9IMpdZAAAAOnRSTlMAALMk94QJ4VO6KfmLDOZaAcEv+5MQ62ICyDX9mhTuaDLsZZvOOe9tBP6jGNQ/83UFqxzaRvZ9BrIhwtiKnAAAAAFiS0dEAIgFHUgAAAAHdElNRQfiBgYBHxoMiSeGAAAAnklEQVQ4y63URw7CUAwE0G9CCT2ElhBCCSX0Xuf+B0NCLJCy+hrPAZ5k2R5jLCM5RzKxRYwgXygqKEDJ1VCAckVDQbVWV1CARtNTUICWr6Gg3en+FLEN/tPrB18FZMKBhoJoGCsowGisoYQTXpkmAT1RNIv5Tc8X/L0s0xV9u+vNlv+A3Z7/6cPxxDfD+cK31PXGN+b98RRaeb2z2/8ArMx6gusSSywAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTgtMDYtMDZUMDE6MzE6MjYtMDc6MDDMuiZhAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE4LTA2LTA2VDAxOjMxOjI2LTA3OjAwveee3QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAASUVORK5CYII=" /></svg>'
+
             });
             google.maps.event.addListener(markerName[i], 'mouseout', function() {
                 this.setOptions({labelClass:labClassOut[this.numb]});
+                window.pointer.innerHTML = '•';
             });
             markerName[i].addListener('click',function(){
                 $('.pop-up-map').addClass('active');
             });
         }
+        var pointer = new RETICOOL({
+            //innerHTML: innerOpts[i],
+        });
         var myoverlay = new google.maps.OverlayView();
         myoverlay.draw = function () {
             this.getPanes().markerLayer.id='markerLayer';
         };
         myoverlay.setMap(map);
+
+
     }
 
     google.maps.event.addDomListener(window, 'load', initMap);

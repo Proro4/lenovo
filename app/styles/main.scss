@@ -1333,6 +1333,7 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
         position: relative;
         right: 0;
         width: 115%;
+        transition: 0.3s all;
         //max-width: 100%;
       }
     }
@@ -1350,6 +1351,7 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
       img{
         position: relative;
         width: 115%;
+        transition: 0.3s all;
       }
     }
     &__text{
@@ -1374,6 +1376,7 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
           position: relative;
           min-height: 110%;
           width: 110%;
+          transition: 0.3s all;
         }
       }
     }
@@ -1384,6 +1387,7 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
         margin-bottom: 200px;
         img{
           max-width: 100%;
+          transition: 0.3s all;
         }
       }
     }
@@ -1403,6 +1407,7 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
         position: relative;
         right:20px;
         margin-bottom: 50px;
+        transition: 0.3s all;
       }
     }
   }
@@ -1428,11 +1433,12 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
   overflow: hidden;
   max-width: 1100px;
   &__one{
-    max-width: 800px !important;
-    max-height: 480px !important;;
+    max-width: 570px !important;
+    max-height: 700px !important;;
     img{
       margin-left: 0 !important;
       margin-top: 0 !important;
+      object-fit: cover;
     }
   }
   &__two{
@@ -1451,11 +1457,22 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
       min-height: 110%;
     }
   }
+  &__four{
+    max-width: 1070px !important;
+    max-height: 710px !important;;
+    img{
+      margin-left: 0 !important;
+      margin-top: 0 !important;
+      object-fit: cover;
+    }
+  }
 
   img{
     position: relative;
     object-fit: cover;
     width: 115%;
+    left: 0;
+    top: 0;
   }
 }
 .about{ 
@@ -1489,6 +1506,7 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
     width: 100%;
     text-align: center;
     &__pup-up{
+      text-align:left;
       position: fixed;
       right: 100px;
       top:300px;
@@ -1496,7 +1514,7 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
       z-index: 100;
       padding: 15px;
       border-radius: 5px;
-      background: url("../images/popup_bord.png")no-repeat left center;
+      background: url("../images/popup_bord.png")no-repeat left center, rgba(255,255,255,0.8);
       transform:translate3d(0,-1000px,0);
       transition:0.3s all;
       &.active{
@@ -1506,6 +1524,9 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
     }
     &__show{
       width: 100%;
+    }
+    &__all{
+      position: relative;
     }
   }
   &__img-1{ 
@@ -1525,12 +1546,19 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
     position: relative;
     bottom: 150px;
     &__block{
-      display: flex; 
       img{
-        &:last-child{
-          margin-top: 340px;
-          margin-left: 100px;
-        }
+      }
+    }
+    &__last{
+      display: inline-block;
+      width: 100%;
+      img{
+        float: right;
+        max-width:600px;
+        height:auto;
+        margin-top: -240px;
+        position: relative;
+        left: 100px;
       }
     }
   }
@@ -1546,6 +1574,12 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
       a{
         position: relative;
         z-index:1;
+        color: black;
+        &:hover,
+        &:focus{
+          text-decoration: none;
+          color: black;
+        }
       }
       &__hover{
         left:0;
@@ -1599,10 +1633,19 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
 .video-1,
 .video-2,
 .video-3{
-  display: none;
+  transition: 1s all;
+  opacity: 0;
   &.active{
-    display: block;
+    opacity: 1;
   }
+}
+.video-2,
+.video-3{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
 }
 @media screen and (max-width:1760px){
 
@@ -2431,7 +2474,7 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
   padding-left:110px;
   padding-bottom: 20px;
   vertical-align: top;
-  margin-top: -30px !important;
+  margin-top: -70px !important;
   text-transform: uppercase;
   text-align: left;
   color:rgba(255,255,255,0.5);
@@ -2729,4 +2772,7 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
   body{
     overflow: hidden;
   }
+}
+.gm-style>div{
+  cursor: none !important;
 }
