@@ -577,6 +577,8 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
   overflow: hidden;
   .logo-video{
     position: relative;
+    width: 115%;
+    left:-5%;
     &__block{
     position: relative;
       &:before{
@@ -1509,7 +1511,7 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
       text-align:left;
       position: fixed;
       right: 100px;
-      top:300px;
+      top:375px;
       background: white;
       z-index: 100;
       padding: 15px;
