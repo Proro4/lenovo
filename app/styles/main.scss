@@ -273,17 +273,54 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
     padding-bottom: 150px;
   }
   &__content{
-    padding-left: 300px;
+    padding-left: 15%;
     padding-bottom: 150px;
     display: flex;
     justify-content: space-between;
+    &__video{
+      width: 100%;
+      margin-bottom: 150px;
+      iframe{
+        width: 100%;
+        min-height: 450px;
+      }
+    }
+    &__block{
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      &__left{
+        width: 50%;
+        max-width: 570px;
+        p{
+          color: #1b1b1b;
+          font-size: 18px;
+          margin-bottom: 20px;
+          font-family: 'GothamPro-Regular';
+        }
+        img{
+          margin-top: 100px;
+          width: 100%;
+        }
+      }
+      &__right{
+        width: 50%;
+        video{
+          width: 100%;
+          pointer-events: none;
+        }
+        img{
+          max-width: 100%;
+        }
+      }
+    }
     &__img{
       text-align: right;
       margin-bottom: 110px;
     }
     &__title{
       line-height: 1.1;
-      font-size: 72px;
+      font-size: 92px;
       font-family: GothamPro-Bold;
       margin-bottom: 100px;
       padding-right: 50px;
@@ -295,15 +332,26 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
         li{
           margin-bottom: 20px;
           display: block;
+          display: flex;
           p{
             font-family: 'GothamPro-Regular';
             font-size: 18px;
+            min-width: 225px;
           }
           b{
-            font-family: 'GothamPro-Bold';
             font-size: 18px;
+            font-weight: normal;
+            font-family: 'GothamPro-Regular';
+            a{
+              color: black;
+              padding-bottom: 25px;
+              display: inline-block;
+            }
           }
         }
+      }
+      img{
+        max-width: 300px;
       }
     }
     &__right{
@@ -312,6 +360,7 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
         margin-bottom: 30px;
         max-width: 600px;
         font-family: 'GothamPro-Regular';
+        color: #1b1b1b;
       }
     }
   }
@@ -418,7 +467,23 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
       display: block;
       overflow: hidden;
       padding-bottom: 4px;
+      &.menu-fb{
+        position: relative;
+        top:-5px;
+        a{
+          display: inline-block;
+          height: 20px;
+          width: 20px;
+          font-family: "GothamPro-Bold";
+        }
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
       a{
+        font-size: 8pt;
         color:black;
         text-transform:uppercase;
         font-weight: normal;
@@ -1650,7 +1715,12 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
   width: 100%;
 }
 @media screen and (max-width:1760px){
-
+  .header{
+    margin-bottom: 140px;
+  }
+  .header__menu{
+    padding-top: 0;
+  }
   .about__img-1 .img-move {
     max-width: 1200px;
     max-height: 600px;
@@ -1773,6 +1843,14 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
     width: 1700px;
   }
 }
+@media screen and (max-width: 1460px){
+  .pop-up-map__content__title{
+    font-size: 80px;
+  }
+  .pop-up-map__content{
+    padding-left: 7%;
+  }
+}
 @media screen and (max-height:1000px){
   .logo-v{
     margin-top: 115px;
@@ -1793,6 +1871,9 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
   }
 }
 @media screen and (max-width:1220px){
+  .img-move__two{
+    float: none;
+  }
   .footer__inner__left{
     background-size: 140%;
     &:hover{
@@ -1920,6 +2001,14 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
   }
 }
 @media screen and (max-width:992px){
+  .pop-up-map__content__block{
+    flex-direction: column;
+  }
+  .pop-up-map__content__block__left,
+  .pop-up-map__content__block__right{
+    width: 100%;
+    max-width: 100%;
+  }
   .logo-3__word .logo-2__word__word-e{
     left: 45px;
   }
@@ -2370,6 +2459,7 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
       border-radius: 5px;
       border:1px solid black;
       animation: mobileleft 3s infinite;
+      display: inline-block;
       &:before{
         content: '';
         position: absolute;
