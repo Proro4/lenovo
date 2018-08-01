@@ -280,6 +280,9 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
     &__video{
       width: 100%;
       margin-bottom: 150px;
+      &.p-left{
+        padding-left: 15%;
+      }
       iframe{
         width: 100%;
         min-height: 450px;
@@ -337,13 +340,16 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
             font-family: 'GothamPro-Regular';
             font-size: 18px;
             min-width: 225px;
+            font-weight: normal;
           }
           b{
             font-size: 18px;
             font-weight: normal;
+            font-weight: 600;
             font-family: 'GothamPro-Regular';
             a{
               color: black;
+              text-decoration: underline;
               padding-bottom: 25px;
               display: inline-block;
             }
@@ -1594,6 +1600,8 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
     }
     &__all{
       position: relative;
+      width: 80%;
+      margin: 0 auto;
     }
   }
   &__img-1{ 
