@@ -796,52 +796,7 @@ $(document).ready(function(){
 
     if($('.about__video').length != 0){
         $(window).scroll(function () {
-            var windowSCroll = $(this).scrollTop();
-            if(windowSCroll > 100 && windowSCroll <300){
-                $('.video-2').removeClass('active');
-                $('.video-3').removeClass('active');
-                $('.tips-2').removeClass('active');
-                $('.tips-3').removeClass('active');
-                $('.tips-4').removeClass('active');
-                if($('.video-1').hasClass('active')){}else{
-                    $('.video-1').addClass('active');
-                    $('.video-1').get(0).play();
-                    $('.tips-1').addClass('active');
-                }
-            }else if(windowSCroll > 300 && windowSCroll < 500){
-                $('.video-1').removeClass('active');
-                $('.video-3').removeClass('active');
-                $('.tips-1').removeClass('active');
-                $('.tips-3').removeClass('active');
-                $('.tips-4').removeClass('active');
-                if($('.video-2').hasClass('active')){}else{
-                    $('.video-2').addClass('active');
-                    $('.video-2').get(0).play();
-                    $('.tips-2').addClass('active');
-                }
-            }else if(windowSCroll > 500 && windowSCroll < 700){
-                console.log('1');
-                $('.video-1').removeClass('active');
-                $('.video-2').removeClass('active');
-                $('.tips-1').removeClass('active');
-                $('.tips-2').removeClass('active');
-                $('.tips-4').removeClass('active');
-                $('.video-3').removeClass('active');
-                if($('.video-3').hasClass('active')){}else{
-                    $('.video-3').addClass('active');
-                    $('.video-3').get(0).play();
-                    $('.tips-3').addClass('active');
-                }
-            }else if(windowSCroll >700 && windowSCroll < 900){
-                $('.tips-1').removeClass('active');
-                $('.tips-2').removeClass('active');
-                $('.tips-3').removeClass('active');
-                if($('.tips-4').hasClass('active')){}else{
-                    $('.video-1').addClass('active');
-                    $('.tips-4').addClass('active');
 
-                }
-            }
         })
         // var v = document.getElementsByTagName('video')[0];
         // var videoHeight = $('.about__video').height();
@@ -901,3 +856,51 @@ if($('#videojs-panorama-player').length != 0){
         });
     });
 }
+$('.about__video__pup-up__scroll').scroll(function () {
+    var windowSCroll = $(this).scrollTop();
+    if(windowSCroll > 0 && windowSCroll <400){
+        $('.video-2').removeClass('active');
+        $('.video-3').removeClass('active');
+        $('.tips-2').removeClass('active');
+        $('.tips-3').removeClass('active');
+        $('.tips-4').removeClass('active');
+        if($('.video-1').hasClass('active')){}else{
+            $('.video-1').addClass('active');
+            $('.video-1').get(0).play();
+            $('.tips-1').addClass('active');
+        }
+    }else if(windowSCroll > 400 && windowSCroll < 800){
+        $('.video-1').removeClass('active');
+        $('.video-3').removeClass('active');
+        $('.tips-1').removeClass('active');
+        $('.tips-3').removeClass('active');
+        $('.tips-4').removeClass('active');
+        if($('.video-2').hasClass('active')){}else{
+            $('.video-2').addClass('active');
+            $('.video-2').get(0).play();
+            $('.tips-2').addClass('active');
+        }
+    }else if(windowSCroll > 800 && windowSCroll <1200){
+        console.log('1');
+        $('.video-1').removeClass('active');
+        $('.video-2').removeClass('active');
+        $('.tips-1').removeClass('active');
+        $('.tips-2').removeClass('active');
+        $('.tips-4').removeClass('active');
+        $('.video-3').removeClass('active');
+        if($('.video-3').hasClass('active')){}else{
+            $('.video-3').addClass('active');
+            $('.video-3').get(0).play();
+            $('.tips-3').addClass('active');
+        }
+    }else if(windowSCroll >800 && windowSCroll < 1200){
+        $('.tips-1').removeClass('active');
+        $('.tips-2').removeClass('active');
+        $('.tips-3').removeClass('active');
+        if($('.tips-4').hasClass('active')){}else{
+            $('.video-1').addClass('active');
+            $('.tips-4').addClass('active');
+
+        }
+    }
+});

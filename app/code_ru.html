@@ -1,18 +1,18 @@
 <!doctype html>
 <html class="no-js" lang="">
   <head>
-      <meta charset="utf-8">
-      <meta content="Відкрий Київ з vr-ракурсу" name="description" />
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta property="og:description" content="Відкрий Київ з vr-ракурсу">
-      <meta name="og:title" content="Lenovo Explorer" />
-      <meta property="og:image" content="http://lenovo.nwdev.net/images/share.png">
-      <meta name="og:url" content="http://lenovo.nwdev.net/" />
-      <meta name="og:image" content="http://lenovo.nwdev.net/images/share.png" />
-      <meta name="vk:image" content="http://lenovo.nwdev.net/images/share.png" />
-      <title>Lenovo Explorer</title>
+    <meta charset="utf-8">
+    <meta content="Відкрий Київ з vr-ракурсу" name="description" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description" content="Відкрий Київ з vr-ракурсу">
+    <meta name="og:title" content="Lenovo Explorer" />
+    <meta property="og:image" content="http://lenovo.nwdev.net/images/share.png">
+    <meta name="og:url" content="http://lenovo.nwdev.net/" />
+    <meta name="og:image" content="http://lenovo.nwdev.net/images/share.png" />
+    <meta name="vk:image" content="http://lenovo.nwdev.net/images/share.png" />
+    <title>Lenovo Explorer</title>
 
-      <link rel="shortcut icon" href="/images/ico.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/images/ico.ico" type="image/x-icon">
     <!-- Place favicon.ico in the root directory -->
 
     <!-- build:css styles/vendor.css -->
@@ -52,28 +52,29 @@
       </a>
   </div>
 
-
-  <header class="header mb50">
-      <div class="container container-1700">
-          <div class="row">
-              <div class="header__menu no-load">
-                  <ul class="header__menu__left">
-                      <li><a href="index.html">Головна</a></li>
-                      <li><a href="map.html">Локації</a></li>
-                      <li><a href="about.html">Lenovo Explorer</a></li>
-                      <li><a href="about-project.html">Про проект</a></li>
-                  </ul>
-                  <ul class="header__menu__right">
-                      <li><a href="dowl.html">Завантажити</a></li>
-                      <li><a href="code.html">Ввести код</a></li>
-                      <li class="header__menu__lang"><p>UA</p><a href="dowl_ru.html">RU</a></li>
-                      <li class="menu-fb"><a href="https://www.facebook.com/LenovoUkraine/" target="_blank">f</a></li>
-                  </ul>
-              </div>
-          </div>
-      </div>
-  </header>
-  <div class="logo-2">
+   
+   <header class="header">
+     <div class="container container-1700">
+       <div class="row">
+           <div class="header__menu no-load">
+               <ul class="header__menu__left">
+                   <li><a href="index_ru.html">Главная</a></li>
+                   <li><a href="map_ru.html">Локации</a></li>
+                   <li><a href="about_ru.html">Lenovo Explorer</a></li>
+                   <li><a href="about-project_ru.html">Про проект</a></li>
+               </ul>
+               <ul class="header__menu__right">
+                   <li><a href="dowl_ru.html">Скачать</a></li>
+                   <li><a href="code_ru.html">Ввести код</a></li>
+                   <li><a target="_blank" href="https://shop.lenovo.ua/uk/acessories/shlem-virtualnoj-realnosti-lenovo-explorer.html">Lenovo Shop</a></li>
+                   <li class="menu-fb"><a href="https://www.facebook.com/LenovoUkraine/" target="_blank"><img src="images/fb-ic.png" alt=""></a></li>
+                   <li class="header__menu__lang"><p>RU</p><a href="code.html">UA</a></li>
+               </ul>
+           </div>
+       </div>
+     </div>
+   </header>  
+   <div class="logo-2">
     <div class="logo-2__word"><img src="images/svg/word_k.svg" alt=""></div>
     <div class="logo-2__word"><img src="images/svg/word_i.svg" alt=""></div>
     <div class="logo-2__word">
@@ -92,22 +93,21 @@
     </div>
     <div class="logo-2__word"><img src="images/svg/word_v.svg" alt=""></div>
    </div>
-   <section class="dowload">
+   <section class="code">
      <div class="container">
        <div class="row">
-        <div class="dowload__text"> 
-          <p>Завантажуй повну версію VR-туру "Київ з ранку до світанку" і досліджуй місто у віртуальній реальності</p>
+        <div class="code__text">
+          <p>Пользователи, которые установили «Киев: от рассвета до заката» из Steam или Windows Mixed Reality и открыли все локации, получили код-сюрприз.</p>
+          <p>Введи его и узнай, какую награду ты можешь получить за свою любознательность.
+          </p>
         </div>
-        <div class="dowload__list">
-          <div class="dowload__list__block">
-            <a href="#" class="dowload__list__block__windows"></a>
-            <div class="dowload__list__block__hover hover-windows"></div>
-          </div>
-          <div class="dowload__list__block">
-            <a href="#" class="dowload__list__block__steam"></a>
-            <div class="dowload__list__block__hover hover-steam"></div>
-          </div>
-        </div>
+         <form action="#">
+          <label class="code__block">
+             <input type="text" class="input-valid" maxlength="6" onkeyup="Latin(this);">
+             <span>ввести код</span>
+             <div class="code__block__hover"></div>
+           </label>
+         </form>
        </div>
      </div>
    </section>
@@ -115,21 +115,22 @@
       <div class="container container-1700">
           <div class="row">
               <div class="footer__inner">
-                  <a class="footer__inner__left" href="map.html">
+                  <a class="footer__inner__left" href="map_ru.html">
                       <span class="footer__inner__left__hover"></span>
-                      <p>Досліди локації,<br> що ввійшли до VR-туру </p>
+                      <p>Исследуй локации, <br>которые вошли в тур  </p>
                   </a>
-                  <a class="footer__inner__right" href="dowl.html">
+                  <a class="footer__inner__right" href="dowl_ru.html">
                       <span class="footer__inner__right__hover"></span>
-                      <p>Завантажуй додаток для та відчуй<br> атмосферу Києва у VR </p>
+                      <p>Скачай  приложение и погрузись <br>в атмосферу Киева в VR </p>
                   </a>
               </div>
           </div>
       </div>
   </footer>
-    
-    
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+
+
+
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
       (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
       function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
