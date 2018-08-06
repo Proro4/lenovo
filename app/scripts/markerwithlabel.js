@@ -242,9 +242,9 @@ MarkerLabel_.prototype.onAdd = function () {
       }
     }),
     google.maps.event.addDomListener(this.eventDiv_, 'click', function (e) {
-      debugger
+      // debugger
       if (me.marker_.getDraggable() || me.marker_.getClickable()) {
-        debugger
+        // debugger
         if (cIgnoreClick) { // Ignore the click reported when a label drag ends
           cIgnoreClick = false;
         } else {

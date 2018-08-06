@@ -60,12 +60,12 @@ function mouseStyle(){
             // document.addEventListener('keydown',function(){
             //   pointer.innerHTML = innerOpts[ i++ % innerOpts.length ];
             // });
-            $('a,.labelBlock').hover(function(){
+            $('a,.labelBlock,.pop-up-code__block__close').hover(function(){
                 // pointer.innerHTML = innerOpts[13];
                 pointer.innerHTML = '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="69px" height="24px" viewBox="0 0 69 24" enable-background="new 0 0 69 24" xml:space="preserve">  <image id="image0" width="69" height="24" x="0" y="0"xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEUAAAAYCAMAAACbQ8AyAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAtFBMVEX///8A/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wD///9IMpdZAAAAOnRSTlMAALMk94QJ4VO6KfmLDOZaAcEv+5MQ62ICyDX9mhTuaDLsZZvOOe9tBP6jGNQ/83UFqxzaRvZ9BrIhwtiKnAAAAAFiS0dEAIgFHUgAAAAHdElNRQfiBgYBHxoMiSeGAAAAnklEQVQ4y63URw7CUAwE0G9CCT2ElhBCCSX0Xuf+B0NCLJCy+hrPAZ5k2R5jLCM5RzKxRYwgXygqKEDJ1VCAckVDQbVWV1CARtNTUICWr6Gg3en+FLEN/tPrB18FZMKBhoJoGCsowGisoYQTXpkmAT1RNIv5Tc8X/L0s0xV9u+vNlv+A3Z7/6cPxxDfD+cK31PXGN+b98RRaeb2z2/8ArMx6gusSSywAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTgtMDYtMDZUMDE6MzE6MjYtMDc6MDDMuiZhAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE4LTA2LTA2VDAxOjMxOjI2LTA3OjAwveee3QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAASUVORK5CYII=" /></svg>'
             });
 
-            $('a,.labelBlock').mouseleave(function(){
+            $('a,.labelBlock,.pop-up-code__block__close').mouseleave(function(){
                 pointer.innerHTML = innerOpts[6];
             });
             $('.pop-up-map__close').hover(function(){
@@ -80,7 +80,7 @@ function mouseStyle(){
             });
 
 
-            $('.logo-video__block__play').mouseleave(function(){ ;
+            $('.logo-video__block__play').mouseleave(function(){
                 pointer.innerHTML = innerOpts[6];
             });
             $('input').hover(function(){
@@ -88,6 +88,13 @@ function mouseStyle(){
             });
 
             $('input').mouseleave(function(){
+                pointer.innerHTML = innerOpts[6];
+            });
+            $('input[type="submit"]').hover(function(){
+                pointer.innerHTML = '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="65px" height="22px" viewBox="0 0 69 24" enable-background="new 0 0 69 24" xml:space="preserve">  <image id="image0" width="69" height="24" x="0" y="0"xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEUAAAAYCAMAAACbQ8AyAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAtFBMVEX///8A/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wD///9IMpdZAAAAOnRSTlMAALMk94QJ4VO6KfmLDOZaAcEv+5MQ62ICyDX9mhTuaDLsZZvOOe9tBP6jGNQ/83UFqxzaRvZ9BrIhwtiKnAAAAAFiS0dEAIgFHUgAAAAHdElNRQfiBgYBHxoMiSeGAAAAnklEQVQ4y63URw7CUAwE0G9CCT2ElhBCCSX0Xuf+B0NCLJCy+hrPAZ5k2R5jLCM5RzKxRYwgXygqKEDJ1VCAckVDQbVWV1CARtNTUICWr6Gg3en+FLEN/tPrB18FZMKBhoJoGCsowGisoYQTXpkmAT1RNIv5Tc8X/L0s0xV9u+vNlv+A3Z7/6cPxxDfD+cK31PXGN+b98RRaeb2z2/8ArMx6gusSSywAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTgtMDYtMDZUMDE6MzE6MjYtMDc6MDDMuiZhAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE4LTA2LTA2VDAxOjMxOjI2LTA3OjAwveee3QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAASUVORK5CYII=" /></svg>'
+            });
+
+            $('input[type="submit"]').mouseleave(function(){
                 pointer.innerHTML = innerOpts[6];
             });
             $('.about__video').hover(function(){
@@ -796,8 +803,7 @@ $(document).ready(function(){
 
     if($('.about__video').length != 0){
         $(window).scroll(function () {
-
-        })
+        });
         // var v = document.getElementsByTagName('video')[0];
         // var videoHeight = $('.about__video').height();
         // v.currentTime = 10.0;
@@ -813,6 +819,10 @@ $(document).ready(function(){
         })
     }
     $(window).scroll(function(){
+        if($(this).scrollTop() <= 400){
+            $('.about__video__pup-up__scroll').removeClass('hide');
+            $('.about__video__pup-up__scroll').scrollTop(0);
+        }
         if($(this).scrollTop() >= 900){
             $('.about__video__pup-up').removeClass('active');
         }
@@ -858,6 +868,7 @@ if($('#videojs-panorama-player').length != 0){
 }
 $('.about__video__pup-up__scroll').scroll(function () {
     var windowSCroll = $(this).scrollTop();
+    console.log(windowSCroll);
     if(windowSCroll > 0 && windowSCroll <400){
         $('.video-2').removeClass('active');
         $('.video-3').removeClass('active');
@@ -893,6 +904,7 @@ $('.about__video__pup-up__scroll').scroll(function () {
             $('.video-3').get(0).play();
             $('.tips-3').addClass('active');
         }
+        $(this).addClass('hide');
     }else if(windowSCroll >800 && windowSCroll < 1200){
         $('.tips-1').removeClass('active');
         $('.tips-2').removeClass('active');
@@ -900,7 +912,77 @@ $('.about__video__pup-up__scroll').scroll(function () {
         if($('.tips-4').hasClass('active')){}else{
             $('.video-1').addClass('active');
             $('.tips-4').addClass('active');
-
         }
     }
+});
+
+//code
+$(document).ready(function () {
+
+    // Initialize Firebase
+    const config = {
+        apiKey: 'AIzaSyDDMZLqBv2H8aJgEXPCj5OuOHNe3snHCj4',
+        authDomain: 'lenovovr-17886.firebaseapp.com',
+        databaseURL: 'https://lenovovr-17886.firebaseio.com',
+        projectId: 'lenovovr-17886',
+        storageBucket: 'lenovovr-17886.appspot.com',
+        messagingSenderId: '996479227782'
+    };
+    firebase.initializeApp(config);
+
+    //get elemets
+    const preObject = document.getElementById('object');
+
+    //create references
+    const dbRefObject = firebase.database().ref().child('object');
+    const dbRefObjectEmails = firebase.database().ref().child('emails');
+    const dbRefObjectFirst = firebase.database().ref();
+    console.log(dbRefObjectFirst);
+
+    //sync object changes
+    dbRefObject.on('value', snap =>  {
+
+        $('.input-valid').keyup(function () {
+            let thisBLock =   $(this);
+            if(thisBLock.val().length === 6){
+                var enterCode = thisBLock.val();
+                let result = snap.val().filter(function(numb){
+                    return numb == enterCode;
+                });
+
+                if(result.length == 1){
+                    $('.code__block,.code__block__hover').removeClass('error');
+                    $('.error-text').remove();
+                    let object = snap.val();
+                    for (var i = 0; i < object.length; i++) {
+                        if(object[i] == result) {
+                            object.splice(i, 1);
+
+                        }
+                    }
+                    $('.pop-up-code').addClass('active');
+                    dbRefObject.set({
+                        object
+                    });
+                }else{
+                    $('.code__block,.code__block__hover').addClass('error');
+                    $('.code__block').append('<div class="error-text">Перевiрте код, будь ласка</div>')
+                }
+                dbRefObjectEmails.on('value', snap2 =>{
+                    $('.pop-up-code__block a').on('click',function (e) {
+                        e.preventDefault();
+                        let emails = snap2.val();
+                        console.log(emails);
+                        emails[result] = $('.pop-up-code__block input').val();
+                        dbRefObjectEmails.set({
+                            emails
+                        });
+                    })
+                });
+            }
+        });
+    });
+    $('.pop-up-code__block__close').on('click', function() {
+        $('.pop-up-code').removeClass('active');
+    });
 });
