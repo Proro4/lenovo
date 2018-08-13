@@ -374,6 +374,9 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
   }
  }
 
+.through{
+  text-decoration: line-through;
+}
 
 /*HEADER*/
 
@@ -1367,6 +1370,7 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
   }
 }
 .about-project{
+  overflow-x: hidden;
   position: relative;
   z-index: 1;
   padding-left: 150px;
@@ -2153,6 +2157,31 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
   }
 }
 @media screen and (max-width:992px){
+  .pop-up-map{
+    padding:50px 0 0 50px;
+  }
+  .pop-up-map__close{
+    top: 25px;
+    right: 30px;
+  }
+  .pop-up-map__content__video{
+    margin-bottom: 50px;
+  }
+  .pop-up-map__content__block__left .pop-up-map__content__img.img-move.img-move__one{
+    margin-top: 50px;
+  }
+  .pop-up-map__content{
+    padding-bottom: 25px;
+    border: 0;
+  }
+  .pop-up-map__content__title{
+    padding-right: 100px;
+    font-size: 70px;
+    margin-bottom: 50px;
+  }
+  .pop-up-map__content{
+    padding-left: 0;
+  }
   .pop-up-map__content__block{
     flex-direction: column;
   }
@@ -2339,9 +2368,6 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
   .logo-left__img{
     margin: 32px 6px;
   }
-  .logo-v__video{
-    padding-left: 45px;
-  }
   .footer__inner__left p{
     padding: 0 45px 0 70px;
   }
@@ -2361,6 +2387,44 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
   }
 }
 @media screen and (max-width:750px){
+  .about-project__block-2__img{
+    height: 470px;
+  }
+  .about-project .mleft .about-project__block-4__inner.flex-between{
+    flex-direction: column;
+    margin-left: 10px;
+  }
+  .about-project__block-2__img img, .about-project__block-4__inner{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .about-project__block-4__inner.right-50 img,
+  .about-project__block-4__inner img{
+    right: 0;
+  }
+  .about-project__block-4__info{
+    width: 100%;
+  }
+  .about-project>.container,
+  .about-project__block-1{
+    padding-left: 120px;
+    padding-right: 30px;
+  }
+  .about__text{
+    padding-left: 100px;
+  }
+  .logo-v__video__logo-text{
+    margin-left: 45px;
+  }
+  .footer{
+    margin-top: 20px;
+  }
+  .logo-v__video {
+    max-height: 400px;
+  }
+  .logo-v{
+    margin-top: 70px;
+  }
   
   .footer__inner__left{
     background-size: 150%;
@@ -2514,7 +2578,7 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
     left: -30px;
   }
   .logo-v{
-    height: 400px;
+    height: 450px;
   }
   body{
     min-width: 568px;
@@ -2527,6 +2591,7 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
     margin-left: 50px;
   }
   .header{
+    margin-top: 30px;
     height:50px;
     margin-bottom: 50px;
   }
@@ -2581,6 +2646,18 @@ h1,h2,h3,h4,h5,h6,p,b,span,ul,a{
     background-size: 117px;
     width: 117px;
     height: 205px;
+  }
+}
+@media screen and (max-width: 630px){
+  .RETICOOL{
+    display: none !important;
+  }
+  .logo-v__video__logo-text{
+    margin-left: 0px;
+  }
+  .header__menu li a,
+  .header__menu li p{
+    font-size: 7px;
   }
 }
 .min-display{

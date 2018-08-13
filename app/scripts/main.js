@@ -26,7 +26,6 @@ $(window).on('load', function () {
         $('.RETICOOL').show();
     });
     $('.labelBlock').mouseleave(function(){
-        console.log('1');
     });
 });
 
@@ -868,7 +867,6 @@ if($('#videojs-panorama-player').length != 0){
 }
 $('.about__video__pup-up__scroll').scroll(function () {
     var windowSCroll = $(this).scrollTop();
-    console.log(windowSCroll);
     if(windowSCroll > 0 && windowSCroll <400){
         $('.video-2').removeClass('active');
         $('.video-3').removeClass('active');
@@ -892,7 +890,6 @@ $('.about__video__pup-up__scroll').scroll(function () {
             $('.tips-2').addClass('active');
         }
     }else if(windowSCroll > 800 && windowSCroll <1200){
-        console.log('1');
         $('.video-1').removeClass('active');
         $('.video-2').removeClass('active');
         $('.tips-1').removeClass('active');
@@ -936,8 +933,7 @@ $(document).ready(function () {
     //create references
     const dbRefObject = firebase.database().ref().child('object');
     const dbRefObjectEmails = firebase.database().ref().child('emails');
-    const dbRefObjectFirst = firebase.database().ref();
-    console.log(dbRefObjectFirst);
+    const dbRefObjectFirst = firebase.database().ref(); 
 
     //sync object changes
     dbRefObject.on('value', snap =>  {
@@ -946,23 +942,23 @@ $(document).ready(function () {
             let thisBLock =   $(this);
             if(thisBLock.val().length === 6){
                 var enterCode = thisBLock.val();
-                let result = snap.val().filter(function(numb){
+                let result = snap.val().objects.filter(function(numb){
                     return numb == enterCode;
                 });
 
                 if(result.length == 1){
                     $('.code__block,.code__block__hover').removeClass('error');
                     $('.error-text').remove();
-                    let object = snap.val();
-                    for (var i = 0; i < object.length; i++) {
-                        if(object[i] == result) {
-                            object.splice(i, 1);
+                    let objects = snap.val().objects;
+                    for (var i = 0; i < objects.length; i++) {
+                        if(objects[i] == result) {
+                            objects.splice(i, 1);
 
                         }
                     }
                     $('.pop-up-code').addClass('active');
                     dbRefObject.set({
-                        object
+                        objects
                     });
                 }else{
                     $('.code__block,.code__block__hover').addClass('error');
@@ -971,12 +967,18 @@ $(document).ready(function () {
                 dbRefObjectEmails.on('value', snap2 =>{
                     $('.pop-up-code__block a').on('click',function (e) {
                         e.preventDefault();
-                        let emails = snap2.val();
-                        console.log(emails);
-                        emails[result] = $('.pop-up-code__block input').val();
+                        let email = snap2.val();
+                        email[result] = $('.pop-up-code__block input').val();
                         dbRefObjectEmails.set({
-                            emails
+                            email
                         });
+                        $('.pop-up-code').removeClass('active');
+                        $('.code__block,.code__block__hover').removeClass('error');
+                        $('.error-text').html('');
+                        $('.input-valid').val('');
+                        setTimeout(function () {
+                            location.reload();
+                        },200);
                     })
                 });
             }
